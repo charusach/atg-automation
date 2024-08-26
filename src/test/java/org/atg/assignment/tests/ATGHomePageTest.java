@@ -36,6 +36,7 @@ public class ATGHomePageTest extends BaseTest {
         atgHomePageObject.getHoseBettingCalendarLink().click();
 
         V4PageObject v4PageObject = new V4PageObject(driver);
+        PageObjectUtil.waitUntilVisible(driver, v4PageObject.getCalendarNextDayButton());
         assertTrue(v4PageObject.getCalendarNextDayButton().isDisplayed(), "Calendar next day button should be visible");
         v4PageObject.getCalendarNextDayButton().click();
         assertTrue(v4PageObject.getGameTypeV4Button().isDisplayed(), "Button to select V4 should be visible");
